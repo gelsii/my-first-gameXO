@@ -1,6 +1,7 @@
 import { tableLoop } from "./TypeScript/pages/table.js";
 import { Restart } from "./TypeScript/pages/restart.js";
 const mainContainer = document.querySelector("#main-container");
+console.log("ikaw");
 const displayHTML = async () => {
     try {
         const table = await fetch("src/pages/table.html");
