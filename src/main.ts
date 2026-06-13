@@ -14,7 +14,7 @@ const displayHTML = async () => {
         const continuesGameNotif = await fetch("src/notifications/continuePop.html");
         const displayContinuesGameNotif = await continuesGameNotif.text();
 
-        const tools = await fetch("my-first-game/tools/tools.html");
+        const tools = await fetch("src/tools/tools.html");
         const displayTools = await tools.text();
 
         /*const AiDialog = await fetch("src/notifications/dialogAI.html");
