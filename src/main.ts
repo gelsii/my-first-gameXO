@@ -6,7 +6,7 @@ const mainContainer = document.querySelector("#main-container") as HTMLDivElemen
 const displayHTML = async () => {
     try {
         
-        const table = await fetch("");
+        const table = await fetch("src/pages/table.html");
         const displayTable = await table.text();
 
         const notification = await fetch("src/notifications/winnerPop.html");
