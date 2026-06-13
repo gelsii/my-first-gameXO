@@ -22,7 +22,7 @@ const displayHTML = async () => {
         const displayAiDialog = await AiDialog.text();*/
 
             if(mainContainer){
-            mainContainer.innerHTML += displayTable + displayNotification + displayContinuesGameNotif + displayTools;/*+displayAiDialog*/
+           
 
             //const callTableLopp = tableLoop();
             //const callRestartFunction = Restart();
