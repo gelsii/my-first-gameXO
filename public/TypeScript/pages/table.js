@@ -33,6 +33,7 @@ export const patternsONames = {
 };
 // main Function
 export const tableLoop = () => {
+    console.log("hoys");
     // Main Table || Main Board of tic-tac-toe GAME
     const mainTable = document.querySelector("#main-table");
     // Turn Element Txt

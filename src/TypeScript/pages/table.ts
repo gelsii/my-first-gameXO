@@ -62,6 +62,7 @@ export const patternsONames: listNamesOfPatterns = {
 
 // main Function
 export const tableLoop = (): void => {
+    console.log("hoys")
 
     // Main Table || Main Board of tic-tac-toe GAME
     const mainTable = document.querySelector("#main-table") as HTMLDivElement;
