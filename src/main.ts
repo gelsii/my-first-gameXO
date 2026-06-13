@@ -5,16 +5,16 @@ const mainContainer = document.querySelector("#main-container") as HTMLDivElemen
 
 const displayHTML = async () => {
     try {
-        const table = await fetch("./pages/table.html");
+        const table = await fetch("my-first-game/pages/table.html");
         const displayTable = await table.text()
 
-        const notification = await fetch("./notifications/winnerPop.html");
+        const notification = await fetch("my-first-game/notifications/winnerPop.html");
         const displayNotification = await notification.text();
 
-        const continuesGameNotif = await fetch("./notifications/continuePop.html");
+        const continuesGameNotif = await fetch("my-first-game/notifications/continuePop.html");
         const displayContinuesGameNotif = await continuesGameNotif.text();
 
-        const tools = await fetch("./tools/tools.html");
+        const tools = await fetch("my-first-game/tools/tools.html");
         const displayTools = await tools.text();
 
         /*const AiDialog = await fetch("src/notifications/dialogAI.html");
