@@ -2,7 +2,7 @@ import { tableLoop } from "./TypeScript/pages/table.js";
 import { Restart } from "./TypeScript/pages/restart.js";
 
 const mainContainer = document.querySelector("#main-container") as HTMLDivElement;
-console.log("hello world");
+console.log("nigel bacani");
 
 const displayHTML = async () => {
     try {
