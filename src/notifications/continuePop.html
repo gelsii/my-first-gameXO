@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main
+      class="w-full h-full fixed top-0 bg-[#1615176f] hidden justify-center items-center"
+      id="continueDialog"
+    >
+      <div
+        class="w-90 h-50 bg-[#2A1A4A] px-3 gap-2 border-3 border-[#FFD700] rounded-lg flex flex-col justify-around items-center"
+      >
+        <div class="flex justify-center items-center flex-col">
+          <h1
+            class="text-[#FFFFFF] mt-3 text-shadow-[-1px_0px_1px_#FFC800] font-bold text-center sm:text-base"
+            id="textContinueDialog"
+          >
+           The game has ended. X wins and O loses this round. Would you like to play again and see if the result changes?
+          </h1>
+        </div>
+        <div class="flex justify-center items-center gap-5 ">
+          <button
+            class="bg-[#FF007F] w-30 text-[#FFFFFF] h-8 flex cursor-pointer justify-center items-center font-bold rounded-md text-base"
+            id="closeGame"
+          >
+            Close
+          </button>
+          <button
+            class="bg-[#FF007F] w-30 text-[#FFFFFF] h-8 flex cursor-pointer justify-center items-center font-bold rounded-md text-base"
+            id="playAgain"
+          >
+            Play Again
+          </button>
+        </div>
+      </div>
+    </main>
+</body>
+</html>

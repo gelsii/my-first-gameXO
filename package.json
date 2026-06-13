@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  },
+  "scripts": {
+    "ts": "tsc --watch",
+    "tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "dev": "concurrently \"npm run ts\" \"npm run tailwind\""
+  }
+}

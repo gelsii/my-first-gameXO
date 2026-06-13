@@ -1,0 +1,13 @@
+-- huli nak nag plano ng flow ng game na ito.
+-- Success naayos na yung winner.
+
+-- scores konti pa may aayusin
+
+-- magdadag-dag ng isang notification... ilalagay yon eventListener ng winnerDialog
+
+-- ang nilalaman non ay "confirmation or continue the game" tatanungin kung itutuloy pa ba ang game kung oo itutuloy kung hindi hindi itutuloy... may mga buttons yan na pagpipilian.
+
+-- aayusin din ang mga width at height ng mga boxes kase nag fi-fit pag pinipindot.
+
+-- and gagawa na ng function para sa Restart button and Play with AI button
+-- sa AI button ang plano ko don ay mag ra-randomized ako ng number sa array ng mga boxes and kung anong piniling number doon ilalagay ang tools..
