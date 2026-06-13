@@ -466,7 +466,7 @@ export const tableLoop = () => {
                 });
                 break;
             default:
-                "";
+                "default";
                 break;
         }
         ;

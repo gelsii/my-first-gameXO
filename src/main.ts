@@ -1,4 +1,4 @@
-//import { tableLoop } from "./TypeScript/pages/table.js";
+import { tableLoop } from "./TypeScript/pages/table.js";
 //import { Restart } from "./TypeScript/pages/restart.js";
 
 const mainContainer = document.querySelector("#main-container") as HTMLDivElement;
@@ -22,9 +22,9 @@ const displayHTML = async () => {
         const displayAiDialog = await AiDialog.text();*/
 
             if(mainContainer){
-           
+            mainContainer.innerHTML += displayTable + displayNotification + displayContinuesGameNotif + displayTools;/*+displayAiDialog*/
 
-            //const callTableLopp = tableLoop();
+            const callTableLopp = tableLoop();
             //const callRestartFunction = Restart();
         }
         
