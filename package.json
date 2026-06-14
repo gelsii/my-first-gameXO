@@ -11,6 +11,6 @@
     "ts": "tsc --watch",
     "tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
     "dev": "concurrently \"npm run ts\" \"npm run tailwind\"",
-    "build": "npx --yes @tailwindcss/cli -i ./src/input.css -o ./src/output.css && tsc"
+    "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css && tsc"
   }
 }
