@@ -9,6 +9,7 @@
   "scripts": {
     "ts": "tsc --watch",
     "tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
-    "dev": "concurrently \"npm run ts\" \"npm run tailwind\""
+    "dev": "concurrently \"npm run ts\" \"npm run tailwind\"",
+    "build": "tsc && npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css"
   }
 }

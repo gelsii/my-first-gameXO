@@ -256,7 +256,7 @@ export const tableLoop = () => {
                                         boxElement.innerText === usedTool[1]) {
                                         if (tieScore.score == 9) {
                                             winner = "Draw";
-                                            if (!isDrawGame.draw && winner === "Draw") {
+                                            if (isDrawGame.draw && winner === "Draw") {
                                                 const callHandleNotificaiton = handleNotificaiton();
                                                 setTimeout(() => {
                                                     dialogWinner.style.display = "flex";
