@@ -1,15 +1,15 @@
-import { scoresO, scoresX, isPlay, winner, patternXNames, patternsONames } from "../pages/table.js";
+import { scoresO, scoresX, isPlay, winner, patternXNames, patternsONames, tieScore, } from "../pages/table.js";
 // Update Scores of players
 const updateTextScores = () => {
     const scoresDialog = document.querySelector("#scoresDialog");
     scoresDialog.innerText = `Scores: X-${scoresX} ---- O-${scoresO}`;
 };
 /**
-    * changeTextWinner function name
-    * change the text of winnerTxt
-    * then if the winner is X change InnerText of the element a message Wins
-    * and if the O is wins change InnerText of the element a message Wins
-*/
+ * changeTextWinner function name
+ * change the text of winnerTxt
+ * then if the winner is X change InnerText of the element a message Wins
+ * and if the O is wins change InnerText of the element a message Wins
+ */
 const changeTextWinner = () => {
     const winnerText = document.querySelector("#winnerTxt");
     switch (winner) {
@@ -22,33 +22,36 @@ const changeTextWinner = () => {
         case "Draw":
             winnerText.innerText = "Draw a Game";
         default:
-            winnerText.innerText = '';
+            winnerText.innerText = "";
             break;
     }
 };
 /**
-    * chaging a text in dialog continue
-*/
+ * chaging a text in dialog continue
+ */
 const changeTextContinue = () => {
     const textContinueDialog = document.querySelector("#textContinueDialog");
     switch (winner) {
         case "X":
-            textContinueDialog.innerText = "The game has ended. X wins and O loses this round. Would you like to play again and see if the result changes?";
+            textContinueDialog.innerText =
+                "The game has ended. X wins and O loses this round. Would you like to play again and see if the result changes?";
             break;
         case "O":
-            textContinueDialog.innerText = "The game has ended. O wins and X loses this round. Would you like to play again and challenge your opponent once more?";
+            textContinueDialog.innerText =
+                "The game has ended. O wins and X loses this round. Would you like to play again and challenge your opponent once more?";
             break;
         case "Draw":
-            textContinueDialog.innerText = "The game has ended in a draw. Neither X nor O was able to secure a victory. Would you like to start a new round and try again?";
+            textContinueDialog.innerText =
+                "The game has ended in a draw. Neither X nor O was able to secure a victory. Would you like to start a new round and try again?";
         default:
-            textContinueDialog.innerText = '';
+            textContinueDialog.innerText = "";
             break;
     }
 };
 /**
-    * handle the close button
-    * then refresh the site
-*/
+ * handle the close button
+ * then refresh the site
+ */
 const handleClosing = () => {
     const closeGame = document.querySelector("#closeGame");
     // main Container of the continuePop.html
@@ -59,17 +62,17 @@ const handleClosing = () => {
     });
 };
 /**
-    * handle a button Play Again
-    * remove the all text in the boxes
-    * then make the patternsNames values is 0
-*/
+ * handle a button Play Again
+ * remove the all text in the boxes
+ * then make the patternsNames values is 0
+ */
 const handlePlayAgain = () => {
     // get the button element
     const playAgain = document.querySelector("#playAgain");
     playAgain.addEventListener("click", () => {
         // get all boxes element
         const boxes = document.querySelectorAll("#main-table div");
-        boxes.forEach(element => {
+        boxes.forEach((element) => {
             element.textContent = "";
         });
         // get the main Element of winnerPop
@@ -90,7 +93,6 @@ const handlePlayAgain = () => {
             patternsONames.horizontalRow2 = resetPatternsNumbers; // horizontal row 2
             patternsONames.horizontalRow3 = resetPatternsNumbers; // horizontal row 3
         }
-        ;
         function vertical() {
             // X tools
             patternXNames.verticalRow1 = resetPatternsNumbers; // vertical row 1
@@ -101,7 +103,6 @@ const handlePlayAgain = () => {
             patternsONames.verticalRow2 = resetPatternsNumbers; // vertical row 2
             patternsONames.verticalRow3 = resetPatternsNumbers; // vertical row 3
         }
-        ;
         function diagonal() {
             // X tools
             patternXNames.diagonalRow1 = resetPatternsNumbers; // diagonal row 1
@@ -110,11 +111,14 @@ const handlePlayAgain = () => {
             patternsONames.diagonalRow1 = resetPatternsNumbers; // diagonal row 1
             patternsONames.diagonalRow2 = resetPatternsNumbers; // diagonal row 2
         }
-        ;
+        function tie() {
+            tieScore.score = 0;
+        }
         // call all function of pattern name changes
         const callHorizontal = horizontal();
         const callVertical = vertical();
         const callDiagonal = diagonal();
+        const callTie = tie();
     });
 };
 // handle the notification

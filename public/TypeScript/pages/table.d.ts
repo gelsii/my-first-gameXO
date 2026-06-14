@@ -2,6 +2,9 @@ export declare let scoresX: number;
 export declare let scoresO: number;
 export declare let isPlay: boolean;
 export declare let winner: "X" | "O" | "Draw";
+export declare let tieScore: {
+    score: number;
+};
 interface listNamesOfPatterns {
     horizontalRow1: number;
     horizontalRow2: number;
