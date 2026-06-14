@@ -5,12 +5,12 @@
   },
   "devDependencies": {
     "concurrently": "^10.0.3",
-    "typescript": "^5.x.x"
+    "typescript": "^5.9.2"
   },
   "scripts": {
     "ts": "tsc --watch",
     "tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
     "dev": "concurrently \"npm run ts\" \"npm run tailwind\"",
-    "build": "tsc && npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css"
+    "build": "tsc"
   }
 }
