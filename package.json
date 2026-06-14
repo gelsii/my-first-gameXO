@@ -4,7 +4,8 @@
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
-    "concurrently": "^10.0.3"
+    "concurrently": "^10.0.3",
+    "typescript": "^5.x.x"
   },
   "scripts": {
     "ts": "tsc --watch",
