@@ -1,4 +1,4 @@
-import { scoresO, scoresX, isPlay, winner, patternXNames, patternsONames, tieScore, } from "../pages/table.js";
+import { scoresO, scoresX, isPlay, winner, patternXNames, patternsONames, tieScore, isDrawGame } from "../pages/table.js";
 // Update Scores of players
 const updateTextScores = () => {
     const scoresDialog = document.querySelector("#scoresDialog");
@@ -21,6 +21,8 @@ const changeTextWinner = () => {
             break;
         case "Draw":
             winnerText.innerText = "Draw a Game";
+            winnerText.style.fontSize = "2.5rem";
+            break;
         default:
             winnerText.innerText = "";
             break;
@@ -43,6 +45,7 @@ const changeTextContinue = () => {
         case "Draw":
             textContinueDialog.innerText =
                 "The game has ended in a draw. Neither X nor O was able to secure a victory. Would you like to start a new round and try again?";
+            break;
         default:
             textContinueDialog.innerText = "";
             break;
@@ -114,6 +117,7 @@ const handlePlayAgain = () => {
         function tie() {
             tieScore.score = 0;
         }
+        const backToFalse = isDrawGame.draw = false;
         // call all function of pattern name changes
         const callHorizontal = horizontal();
         const callVertical = vertical();

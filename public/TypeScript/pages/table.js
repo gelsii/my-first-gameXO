@@ -6,6 +6,7 @@ export let isPlay = false;
 // who's winner?? "X" || "O" || "Draw"
 export let winner;
 export let tieScore = { score: 0 };
+export let isDrawGame = { draw: false };
 export const patternXNames = {
     // horizontal row
     horizontalRow1: 0,
@@ -98,45 +99,53 @@ export const tableLoop = () => {
                 turnXO.textContent = `Turn: ${isUsedTool ? usedTool[1] || "" : usedTool[0] || ""}`;
                 // changing a isUsedTool boolean
                 isUsedTool ? (isUsedTool = false) : (isUsedTool = true);
-                function valuePatternNames(numberX, numberO) {
-                    switch (numberX || numberO) {
+                function valuePatternNames(number, XO) {
+                    switch (number) {
                         case 0:
-                            numberX = patternXNames.horizontalRow1;
-                            numberO = patternsONames.horizontalRow1;
+                            XO
+                                ? (number = patternXNames.horizontalRow1)
+                                : (number = patternsONames.horizontalRow1);
                             break;
                         case 1:
-                            numberX = patternXNames.horizontalRow2;
-                            numberO = patternsONames.horizontalRow2;
+                            XO
+                                ? (number = patternXNames.horizontalRow2)
+                                : (number = patternsONames.horizontalRow2);
                             break;
                         case 2:
-                            numberX = patternXNames.horizontalRow3;
-                            numberO = patternsONames.horizontalRow3;
+                            XO
+                                ? (number = patternXNames.horizontalRow3)
+                                : (number = patternsONames.horizontalRow3);
                             break;
                         case 3:
-                            numberX = patternXNames.verticalRow1;
-                            numberO = patternsONames.verticalRow1;
+                            XO
+                                ? (number = patternXNames.verticalRow1)
+                                : (number = patternsONames.verticalRow1);
                             break;
                         case 4:
-                            numberX = patternXNames.verticalRow2;
-                            numberO = patternsONames.verticalRow2;
+                            XO
+                                ? (number = patternXNames.verticalRow2)
+                                : (number = patternsONames.verticalRow2);
                             break;
                         case 5:
-                            numberX = patternXNames.verticalRow3;
-                            numberO = patternsONames.verticalRow3;
+                            XO
+                                ? (number = patternXNames.verticalRow3)
+                                : (number = patternsONames.verticalRow3);
                             break;
                         case 6:
-                            numberX = patternXNames.diagonalRow1;
-                            numberO = patternsONames.diagonalRow1;
+                            XO
+                                ? (number = patternXNames.diagonalRow1)
+                                : (number = patternsONames.diagonalRow1);
                             break;
                         case 7:
-                            numberX = patternXNames.diagonalRow2;
-                            numberO = patternsONames.diagonalRow1;
+                            XO
+                                ? (number = patternXNames.diagonalRow2)
+                                : (number = patternsONames.diagonalRow2);
                             break;
                         default:
                             "walang default";
                             break;
                     }
-                    return numberX || numberO || 0;
+                    return number || 0;
                 }
                 // patterns winning
                 patterns.forEach((Arrays, indexOfArrays) => {
@@ -151,7 +160,6 @@ export const tableLoop = () => {
                                             switch (loopOfnumber) {
                                                 case 0:
                                                     patternXNames.horizontalRow1++;
-                                                    console.log(patternXNames.horizontalRow1);
                                                     break;
                                                 case 1:
                                                     patternXNames.horizontalRow2++;
@@ -170,7 +178,6 @@ export const tableLoop = () => {
                                                     break;
                                                 case 6:
                                                     patternXNames.diagonalRow1++;
-                                                    console.log(patternXNames.diagonalRow1);
                                                     break;
                                                 case 7:
                                                     patternXNames.diagonalRow2++;
@@ -182,55 +189,59 @@ export const tableLoop = () => {
                                                     "walang default";
                                                     break;
                                             }
-                                            if (valuePatternNames(loopOfnumber, undefined) == 3) {
+                                            if (valuePatternNames(loopOfnumber, true) == 3) {
                                                 scoresX++;
                                                 winner = "X";
+                                                isDrawGame.draw = true;
                                                 const callHandleNotificaiton = handleNotificaiton();
                                                 setTimeout(() => {
                                                     dialogWinner.style.display = "flex";
                                                 }, 500);
                                             }
                                         }
-                                        if (valueText === "O") {
-                                            switch (loopOfnumber) {
-                                                case 0:
-                                                    patternsONames.horizontalRow1++;
-                                                    break;
-                                                case 1:
-                                                    patternsONames.horizontalRow2++;
-                                                    break;
-                                                case 2:
-                                                    patternsONames.horizontalRow3++;
-                                                    break;
-                                                case 3:
-                                                    patternsONames.verticalRow1++;
-                                                    break;
-                                                case 4:
-                                                    patternsONames.verticalRow2++;
-                                                    break;
-                                                case 5:
-                                                    patternsONames.verticalRow3++;
-                                                    break;
-                                                case 6:
-                                                    patternsONames.diagonalRow1++;
-                                                    break;
-                                                case 7:
-                                                    patternsONames.diagonalRow2++;
-                                                    break;
-                                                case 8:
-                                                    tieScore.score++;
-                                                    break;
-                                                default:
-                                                    "walang default";
-                                                    break;
-                                            }
-                                            if (valuePatternNames(undefined, loopOfnumber) == 3) {
-                                                scoresO++;
-                                                winner = "O";
-                                                const callHandleNotificaiton = handleNotificaiton();
-                                                setTimeout(() => {
-                                                    dialogWinner.style.display = "flex";
-                                                }, 500);
+                                        else {
+                                            if (valueText === "O") {
+                                                switch (loopOfnumber) {
+                                                    case 0:
+                                                        patternsONames.horizontalRow1++;
+                                                        break;
+                                                    case 1:
+                                                        patternsONames.horizontalRow2++;
+                                                        break;
+                                                    case 2:
+                                                        patternsONames.horizontalRow3++;
+                                                        break;
+                                                    case 3:
+                                                        patternsONames.verticalRow1++;
+                                                        break;
+                                                    case 4:
+                                                        patternsONames.verticalRow2++;
+                                                        break;
+                                                    case 5:
+                                                        patternsONames.verticalRow3++;
+                                                        break;
+                                                    case 6:
+                                                        patternsONames.diagonalRow1++;
+                                                        break;
+                                                    case 7:
+                                                        patternsONames.diagonalRow2++;
+                                                        break;
+                                                    case 8:
+                                                        tieScore.score++;
+                                                        break;
+                                                    default:
+                                                        "walang default";
+                                                        break;
+                                                }
+                                                if (valuePatternNames(loopOfnumber, false) == 3) {
+                                                    scoresO++;
+                                                    winner = "O";
+                                                    isDrawGame.draw = true;
+                                                    const callHandleNotificaiton = handleNotificaiton();
+                                                    setTimeout(() => {
+                                                        dialogWinner.style.display = "flex";
+                                                    }, 500);
+                                                }
                                             }
                                         }
                                     }
@@ -244,7 +255,13 @@ export const tableLoop = () => {
                                     if (boxElement.innerText === usedTool[0] ||
                                         boxElement.innerText === usedTool[1]) {
                                         if (tieScore.score == 9) {
-                                            console.log("hello world");
+                                            winner = "Draw";
+                                            if (!isDrawGame.draw && winner === "Draw") {
+                                                const callHandleNotificaiton = handleNotificaiton();
+                                                setTimeout(() => {
+                                                    dialogWinner.style.display = "flex";
+                                                }, 500);
+                                            }
                                         }
                                     }
                                 }
@@ -254,6 +271,7 @@ export const tableLoop = () => {
                     });
                 });
             }
+            console.log(patternsONames.diagonalRow2);
         });
     });
     // All List of box Elements
@@ -289,7 +307,7 @@ export const tableLoop = () => {
     for (let numberOfLoop = 0; numberOfLoop < idButtons.length; numberOfLoop++) {
         // element button
         const buttonElement = document.createElement("button");
-        // function style 
+        // function style
         function styleButtonElement() {
             buttonElement.className =
                 "w-30 h-10 bg-[#00F5D4] text-[#121214] text-xl rounded-sm font-bold cursor-pointer md:w-33 hover:bg-[#00D1B5]";
