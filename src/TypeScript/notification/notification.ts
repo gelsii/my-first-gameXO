@@ -157,7 +157,7 @@ const handlePlayAgain = (): void => {
       tieScore.score = 0;
     }
 
-    const backToFalse = (isDrawGame.draw = false);
+    const backToFalse = (isDraw.draw = false);
 
     // call all function of pattern name changes
     const callHorizontal = horizontal();
