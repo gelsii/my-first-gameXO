@@ -35,7 +35,7 @@ const changeTextWinner = (): void => {
       winnerText.style.fontSize = "1.8rem";
       break;
     case "Draw":
-      winnerText.innerText = "Draw a Game";
+      winnerText.innerText = "Draw Game";
       winnerText.style.fontSize = "2.5rem";
       break;
     default:
