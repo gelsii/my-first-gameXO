@@ -1,4 +1,4 @@
-import { scoresO, scoresX, isPlay, winner, patternXNames, patternsONames, tieScore, isDrawGame } from "../pages/table.js";
+import { scoresO, scoresX, isPlay, winner, patternXNames, patternsONames, tieScore, isDrawGame, } from "../tables/table.js";
 // Update Scores of players
 const updateTextScores = () => {
     const scoresDialog = document.querySelector("#scoresDialog");
@@ -117,7 +117,7 @@ const handlePlayAgain = () => {
         function tie() {
             tieScore.score = 0;
         }
-        const backToFalse = isDrawGame.draw = false;
+        const backToFalse = (isDrawGame.draw = false);
         // call all function of pattern name changes
         const callHorizontal = horizontal();
         const callVertical = vertical();

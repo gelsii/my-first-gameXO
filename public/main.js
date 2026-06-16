@@ -1,5 +1,5 @@
-import { tableLoop } from "./TypeScript/pages/table.js";
-import { Restart } from "./TypeScript/pages/restart.js";
+import { tableLoop } from "./TypeScript/tables/table.js";
+import { Restart } from "./TypeScript/buttons/restart.js";
 const mainContainer = document.querySelector("#main-container");
 const displayHTML = async () => {
     try {
@@ -12,9 +12,13 @@ const displayHTML = async () => {
         const tools = await fetch("src/tools/tools.html");
         const displayTools = await tools.text();
         /*const AiDialog = await fetch("src/notifications/dialogAI.html");
-        const displayAiDialog = await AiDialog.text();*/
+            const displayAiDialog = await AiDialog.text();*/
         if (mainContainer) {
-            mainContainer.innerHTML += displayTable + displayNotification + displayContinuesGameNotif + displayTools; /*+displayAiDialog*/
+            mainContainer.innerHTML +=
+                displayTable +
+                    displayNotification +
+                    displayContinuesGameNotif +
+                    displayTools; /*+displayAiDialog*/
             const callTableLopp = tableLoop();
             const callRestartFunction = Restart();
         }
