@@ -15,9 +15,11 @@ const changeTextWinner = () => {
     switch (winner) {
         case "X":
             winnerText.innerText = "X is Win --- O is Lose";
+            winnerText.style.fontSize = "2.25rem";
             break;
         case "O":
             winnerText.innerText = "X is Lose --- O is Win";
+            winnerText.style.fontSize = "2.25rem";
             break;
         case "Draw":
             winnerText.innerText = "Draw a Game";
