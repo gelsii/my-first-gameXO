@@ -27,11 +27,11 @@ const changeTextWinner = (): void => {
   const winnerText = document.querySelector("#winnerTxt") as HTMLHeadingElement;
   switch (winner) {
     case "X":
-      winnerText.innerText = "X is Win --- O is Lose";
+      winnerText.innerText = "X Win --- O Lose";
       winnerText.style.fontSize = "1.8rem";
       break;
     case "O":
-      winnerText.innerText = "X is Lose --- O is Win";
+      winnerText.innerText = "X Lose --- O Win";
       winnerText.style.fontSize = "1.8rem";
       break;
     case "Draw":
