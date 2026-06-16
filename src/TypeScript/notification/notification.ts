@@ -6,7 +6,7 @@ import {
   patternXNames,
   patternsONames,
   tieScore,
-  isDrawGame,
+  isDraw,
 } from "../tables/table.js";
 
 // Update Scores of players

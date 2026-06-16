@@ -1,4 +1,4 @@
-import { scoresO, scoresX, isPlay, winner, patternXNames, patternsONames, tieScore, isDrawGame, } from "../tables/table.js";
+import { scoresO, scoresX, isPlay, winner, patternXNames, patternsONames, tieScore, isDraw, } from "../tables/table.js";
 // Update Scores of players
 const updateTextScores = () => {
     const scoresDialog = document.querySelector("#scoresDialog");
